@@ -4,26 +4,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Usinas Termossolares - NASA+</title>
+<title>Usinas Termossolares - Estudo Completo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#020617;
+    background:#0f172a;
     color:#e2e8f0;
+    transition:0.4s;
 }
 
-/* NAV */
+.light{
+    background:#f1f5f9;
+    color:#0f172a;
+}
+
 nav{
     position:fixed;
     width:100%;
+    background:#020617;
     padding:15px;
-    background:rgba(0,0,0,0.8);
     display:flex;
     justify-content:space-between;
     z-index:1000;
@@ -35,9 +39,9 @@ nav a{
     text-decoration:none;
 }
 
-/* HEADER */
 header{
     height:100vh;
+    background:url('https://upload.wikimedia.org/wikipedia/commons/1/1f/Gemasolar.jpg') center/cover;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -48,10 +52,9 @@ header h1{
     font-size:3em;
 }
 
-/* SEÇÕES */
 section{
     padding:80px 20px;
-    max-width:1200px;
+    max-width:1100px;
     margin:auto;
 }
 
@@ -62,53 +65,45 @@ section{
     margin-bottom:25px;
 }
 
-/* DASHBOARD */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+h2{
+    color:#facc15;
+    margin-bottom:10px;
 }
 
-.metric{
-    background:#0f172a;
-    padding:20px;
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+button{
+    background:#facc15;
+    border:none;
+    padding:10px;
     border-radius:10px;
-    text-align:center;
+    cursor:pointer;
 }
 
-.metric h3{
-    font-size:2em;
-    color:#22c55e;
+.sim{
+    height:100px;
+    background:linear-gradient(90deg,#facc15,#ef4444);
+    animation:energia 3s infinite linear;
 }
 
-/* TURBINA */
-.turbina{
-    width:120px;
-    height:120px;
-    border:6px solid #facc15;
-    border-radius:50%;
-    margin:auto;
-    animation:spin 2s linear infinite;
+@keyframes energia{
+    from{background-position:0;}
+    to{background-position:200px;}
 }
 
-@keyframes spin{
-    to{transform:rotate(360deg);}
-}
-
-/* FORMULA */
-.formula{
-    background:#000;
-    padding:15px;
-    border-radius:10px;
-    margin-top:10px;
-    font-family:monospace;
-}
-
-/* FOOTER */
 footer{
     text-align:center;
     padding:20px;
-    background:#000;
+    background:#020617;
 }
 </style>
 </head>
@@ -116,153 +111,152 @@ footer{
 <body>
 
 <nav>
-<div>Termossolar NASA+</div>
+<div>Usinas Termossolares</div>
 <div>
 <a href="#historia">História</a>
 <a href="#fisica">Física</a>
-<a href="#dados">Dados</a>
 <a href="#brasil">Brasil</a>
+<button onclick="modo()">🌙</button>
 </div>
 </nav>
 
 <header>
 <h1>Usinas Termossolares</h1>
-<p>Estudo Científico Completo + Simulações</p>
 </header>
 
 <section id="historia">
 
-<div class="card">
-<h2>História Completa da Energia Termossolar</h2>
-
+<div class="card fade">
+<h2>História das Usinas Termossolares</h2>
 <p>
-A energia solar térmica surgiu no século XIX com Augustin Mouchot (1866), que demonstrou a possibilidade de gerar vapor utilizando radiação solar.
+A utilização da energia solar térmica começou no século XIX. Em 1866, o inventor francês Augustin Mouchot desenvolveu um dos primeiros sistemas capazes de converter energia solar em vapor.
 </p>
 
 <p>
-Durante o século XX, a tecnologia evoluiu lentamente até a crise do petróleo (1970), quando houve grande interesse em energias renováveis.
+No século XX, especialmente após a crise do petróleo na década de 1970, países começaram a investir mais em fontes alternativas de energia.
 </p>
 
 <p>
-Nos anos 1980, surgiram as primeiras usinas comerciais nos EUA (SEGS), utilizando calhas parabólicas.
+Na década de 1980, foram construídas as primeiras usinas comerciais nos Estados Unidos, conhecidas como SEGS (Solar Energy Generating Systems).
 </p>
 
 <p>
-No século XXI, países como Espanha, China e EUA desenvolveram grandes projetos com armazenamento térmico.
+Hoje, países como Espanha, Estados Unidos e China lideram o desenvolvimento dessa tecnologia.
 </p>
-
-<p>
-Hoje, a energia termossolar é considerada estratégica para garantir estabilidade energética global.
-</p>
-
 </div>
 
 </section>
 
 <section id="fisica">
 
-<div class="card">
-<h2>Fundamentos Físicos Profundos</h2>
+<div class="card fade">
+<h2>Fundamentos Físicos</h2>
 
-<p><b>1. Radiação Solar:</b> Energia emitida pelo Sol (~1361 W/m² na atmosfera).</p>
+<p><b>Radiação solar:</b> energia emitida pelo Sol na forma de ondas eletromagnéticas.</p>
 
-<p><b>2. Lei da Conservação de Energia:</b> Energia não é criada, apenas transformada.</p>
+<p><b>Conversão de energia:</b> energia térmica → energia mecânica → energia elétrica.</p>
 
-<p><b>3. Termodinâmica:</b> Conversão de calor em trabalho.</p>
+<p><b>Termodinâmica:</b> base do funcionamento das usinas, especialmente o ciclo de Rankine.</p>
 
-<p><b>4. Ciclo de Rankine:</b> Base das usinas térmicas.</p>
-
-<div class="formula">
-η = W / Q
-</div>
-
-<p>Onde η é eficiência, W trabalho e Q calor fornecido.</p>
-
-<div class="formula">
-Q = mcΔT
-</div>
-
-<p>Equação do calor (massa, calor específico e variação de temperatura).</p>
+<p><b>Transferência de calor:</b></p>
+<ul>
+<li>Radiação: do Sol para os espelhos</li>
+<li>Condução: no fluido térmico</li>
+<li>Convecção: no vapor</li>
+</ul>
 
 </div>
 
-<div class="card">
-<h2>Simulação de Turbina</h2>
-<div class="turbina"></div>
-<p>Representação da conversão térmica → mecânica → elétrica</p>
+<div class="card fade">
+<h2>Simulação do Fluxo de Energia</h2>
+<div class="sim"></div>
+<p>Representação do fluxo contínuo de energia térmica sendo convertida.</p>
+</div>
+
+<div class="card fade">
+<h2>Ciclo Termodinâmico (Rankine)</h2>
+<p>
+O ciclo de Rankine é composto por quatro etapas principais:
+</p>
+<ul>
+<li>Aquecimento do fluido</li>
+<li>Evaporação</li>
+<li>Expansão na turbina</li>
+<li>Condensação</li>
+</ul>
+
+<p>
+Esse ciclo é responsável pela conversão de energia térmica em trabalho mecânico.
+</p>
 </div>
 
 </section>
 
-<section id="dados">
+<section>
 
-<div class="card">
-<h2>Dashboard Energético Global</h2>
+<div class="card fade">
+<h2>Tecnologias Utilizadas</h2>
 
-<div class="grid">
-
-<div class="metric">
-<h3 id="energia">0</h3>
-<p>kWh gerados (simulação)</p>
-</div>
-
-<div class="metric">
-<h3>40%</h3>
-<p>Eficiência média</p>
-</div>
-
-<div class="metric">
-<h3>1000°C</h3>
-<p>Temperatura máxima</p>
-</div>
-
-<div class="metric">
-<h3>15h</h3>
-<p>Armazenamento térmico</p>
-</div>
+<p><b>Calha Parabólica:</b> espelhos curvos concentram a luz em tubos.</p>
+<p><b>Torre Solar:</b> espelhos direcionam luz para um receptor central.</p>
+<p><b>Disco Parabólico:</b> foco pontual com alta eficiência.</p>
 
 </div>
 
+<div class="card fade">
+<h2>Armazenamento de Energia</h2>
+<p>
+O uso de sais fundidos permite armazenar calor por até 15 horas.
+</p>
+<p>
+Isso garante produção de energia mesmo sem luz solar direta.
+</p>
 </div>
 
-<div class="card">
-<h2>Comparação de Eficiência</h2>
-<canvas id="grafico"></canvas>
+<div class="card fade">
+<h2>Eficiência e Desempenho</h2>
+<p>
+A eficiência varia entre 20% e 40%, podendo chegar a valores maiores com tecnologias modernas.
+</p>
+
+<p>
+A eficiência depende da temperatura, perdas térmicas e qualidade dos materiais.
+</p>
 </div>
 
 </section>
 
 <section id="brasil">
 
-<div class="card">
-<h2>Brasil e Potencial Energético</h2>
+<div class="card fade">
+<h2>Usinas Termossolares no Brasil</h2>
 
 <p>
-O Brasil possui um dos maiores potenciais solares do mundo, especialmente no Nordeste.
+O Brasil possui alto potencial devido à sua localização geográfica e alta incidência solar.
 </p>
 
 <p>
-Regiões como Bahia, Ceará e Piauí apresentam níveis elevados de radiação solar anual.
+Regiões como o Nordeste apresentam condições ideais para esse tipo de energia.
 </p>
 
 <p>
-Apesar disso, a tecnologia termossolar ainda é pouco explorada no país.
+Apesar disso, o país ainda investe mais em energia solar fotovoltaica.
 </p>
 
 <p>
-O investimento é focado na energia fotovoltaica, mas a termossolar pode complementar com armazenamento.
+Projetos experimentais já foram desenvolvidos, mas ainda não em grande escala.
 </p>
 
 </div>
 
-<div class="card">
-<h2>Impactos Ambientais</h2>
+<div class="card fade">
+<h2>Comparação com Outras Energias</h2>
 
 <ul>
-<li>Redução de CO₂</li>
-<li>Energia renovável</li>
-<li>Uso de grandes áreas</li>
-<li>Baixo impacto climático</li>
+<li>Hidrelétrica: depende da água</li>
+<li>Termelétrica: usa combustíveis fósseis</li>
+<li>Fotovoltaica: efeito fotoelétrico</li>
+<li>Termossolar: usa calor e armazenamento térmico</li>
 </ul>
 
 </div>
@@ -271,43 +265,65 @@ O investimento é focado na energia fotovoltaica, mas a termossolar pode complem
 
 <section>
 
-<div class="card">
-<h2>Futuro da Energia Termossolar</h2>
-
-<p>
-A tendência global é aumentar o uso de energia renovável.
-</p>
-
-<p>
-A tecnologia termossolar pode ser essencial por permitir armazenamento de energia.
-</p>
-
-<p>
-Avanços incluem:
-</p>
+<div class="card fade">
+<h2>Impactos Ambientais</h2>
 
 <ul>
-<li>Melhores materiais térmicos</li>
-<li>Maior eficiência</li>
-<li>Redução de custos</li>
-<li>Integração com inteligência artificial</li>
+<li>Baixa emissão de gases poluentes</li>
+<li>Redução do efeito estufa</li>
+<li>Uso de grandes áreas</li>
+<li>Impacto na fauna local</li>
 </ul>
 
 </div>
 
-<div class="card">
-<h2>Conclusão Científica</h2>
+<div class="card fade">
+<h2>Panorama Mundial Atual</h2>
 
 <p>
-As usinas termossolares representam uma aplicação direta da física moderna na geração de energia sustentável.
+A energia termossolar está em crescimento global, principalmente em regiões desérticas.
 </p>
 
 <p>
-Elas utilizam princípios fundamentais da termodinâmica, transferência de calor e engenharia para produzir eletricidade limpa.
+Países como Espanha e EUA já possuem usinas operando em larga escala.
 </p>
 
 <p>
-Seu potencial para o futuro energético mundial é extremamente elevado.
+A China vem expandindo rapidamente esse tipo de energia.
+</p>
+
+</div>
+
+<div class="card fade">
+<h2>Futuro das Usinas Termossolares</h2>
+
+<p>
+Com avanços tecnológicos, espera-se maior eficiência e menor custo.
+</p>
+
+<p>
+A combinação com armazenamento térmico torna essa tecnologia essencial para o futuro energético.
+</p>
+
+<p>
+Ela pode se tornar uma das principais fontes de energia limpa do mundo.
+</p>
+
+</div>
+
+<div class="card fade">
+<h2>Conclusão</h2>
+
+<p>
+As usinas termossolares representam uma aplicação avançada da física na produção de energia sustentável.
+</p>
+
+<p>
+Elas combinam conceitos de termodinâmica, transferência de calor e engenharia para gerar eletricidade de forma limpa.
+</p>
+
+<p>
+Apesar dos desafios, seu potencial é enorme, especialmente em países como o Brasil.
 </p>
 
 </div>
@@ -316,30 +332,24 @@ Seu potencial para o futuro energético mundial é extremamente elevado.
 
 <footer>
 <p>Gabriel Pacheco • Isabely Mota • Maria E. Damasceno • Juan Santos</p>
-<p>Projeto Científico - Nível NASA+</p>
+<p>Trabalho de Física</p>
 </footer>
 
 <script>
+const f=document.querySelectorAll('.fade');
 
-/* CONTADOR */
-let energia=0;
-setInterval(()=>{
-energia+=10;
-document.getElementById('energia').innerText=energia;
-},1000);
-
-/* GRÁFICO */
-new Chart(document.getElementById('grafico'),{
-type:'bar',
-data:{
-labels:['Termossolar','Fotovoltaica','Termelétrica','Hidrelétrica'],
-datasets:[{
-label:'Eficiência (%)',
-data:[40,25,60,90]
-}]
+window.addEventListener('scroll',()=>{
+f.forEach(e=>{
+let pos=e.getBoundingClientRect().top;
+if(pos<window.innerHeight-100){
+e.classList.add('show');
 }
 });
+});
 
+function modo(){
+document.body.classList.toggle('light');
+}
 </script>
 
 </body>
