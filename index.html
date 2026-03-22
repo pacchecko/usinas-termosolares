@@ -1,0 +1,271 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usinas Termossolares - Projeto Completo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:#e2e8f0;
+    transition:0.4s;
+}
+
+/* MODO CLARO */
+.light{
+    background:#f1f5f9;
+    color:#0f172a;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    background:#020617;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+}
+
+/* HEADER */
+header{
+    height:100vh;
+    background:url('https://upload.wikimedia.org/wikipedia/commons/1/1f/Gemasolar.jpg') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+header h1{
+    font-size:3em;
+    animation:fade 2s;
+}
+
+/* ANIMAÇÃO */
+@keyframes fade{
+    from{opacity:0;transform:translateY(50px);}
+    to{opacity:1;}
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* SEÇÕES */
+section{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.03);
+}
+
+/* BOTÃO */
+button{
+    background:#facc15;
+    border:none;
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* GRÁFICO */
+.bar{
+    height:20px;
+    background:#22c55e;
+    margin:10px 0;
+}
+
+/* SIMULAÇÃO */
+.sim{
+    height:100px;
+    background:linear-gradient(90deg,#facc15,#ef4444);
+    animation:energia 3s infinite linear;
+}
+
+@keyframes energia{
+    from{background-position:0;}
+    to{background-position:200px;}
+}
+
+/* MAPA SIMPLES */
+.mapa{
+    height:200px;
+    background:linear-gradient(#facc15,#f97316);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:black;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div>Usinas Termossolares</div>
+<div>
+<a href="#sobre">Sobre</a>
+<a href="#fisica">Física</a>
+<a href="#grafico">Eficiência</a>
+<button onclick="modo()">🌙</button>
+</div>
+</nav>
+
+<header>
+<h1>Energia Termossolar</h1>
+</header>
+
+<section id="sobre">
+
+<div class="card fade">
+<h2>O que são?</h2>
+<p>
+Usinas termossolares utilizam radiação solar concentrada para gerar calor e produzir eletricidade através de turbinas.
+Baseiam-se em princípios da termodinâmica e máquinas térmicas.
+</p>
+</div>
+
+<div class="card fade">
+<h2>Funcionamento</h2>
+<ul>
+<li>Espelhos concentram luz solar</li>
+<li>Aquecimento de fluido térmico</li>
+<li>Produção de vapor</li>
+<li>Movimento de turbinas</li>
+</ul>
+</div>
+
+</section>
+
+<section id="fisica">
+
+<div class="card fade">
+<h2>Física Envolvida</h2>
+<p><b>Termodinâmica:</b> conversão de calor em trabalho</p>
+<p><b>Ciclo de Rankine:</b> base das usinas</p>
+<p><b>Transferência de calor:</b> radiação solar → fluido</p>
+<p><b>Pressão:</b> vapor em alta pressão gera movimento</p>
+</div>
+
+<div class="card fade">
+<h2>Simulação de Energia</h2>
+<div class="sim"></div>
+<p>Fluxo contínuo de energia térmica sendo convertida.</p>
+</div>
+
+</section>
+
+<section id="grafico">
+
+<div class="card fade">
+<h2>Eficiência Energética</h2>
+<p>Comparação aproximada:</p>
+
+<p>Termossolar</p>
+<div class="bar" style="width:40%"></div>
+
+<p>Fotovoltaica</p>
+<div class="bar" style="width:25%"></div>
+
+<p>Termelétrica</p>
+<div class="bar" style="width:60%"></div>
+
+</div>
+
+<div class="card fade">
+<h2>Mapa de Incidência Solar no Brasil</h2>
+<div class="mapa">Nordeste = Alta incidência solar ☀️</div>
+</div>
+
+</section>
+
+<section>
+
+<div class="card fade">
+<h2>Impacto e Futuro</h2>
+<p>
+Energia limpa, sustentável e essencial para reduzir impactos ambientais e o uso de combustíveis fósseis.
+</p>
+</div>
+
+<div class="card fade">
+<h2>Conclusão</h2>
+<p>
+A energia termossolar representa uma das soluções mais avançadas da física aplicada à sustentabilidade.
+</p>
+</div>
+
+</section>
+
+<footer>
+<p>Gabriel Pacheco • Isabely Mota • Maria E. Damasceno • Juan Santos</p>
+<p>Trabalho de Física</p>
+</footer>
+
+<script>
+
+/* SCROLL ANIMAÇÃO */
+const f = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll',()=>{
+f.forEach(e=>{
+let pos=e.getBoundingClientRect().top;
+if(pos<window.innerHeight-100){
+e.classList.add('show');
+}
+});
+});
+
+/* MODO CLARO/ESCURO */
+function modo(){
+document.body.classList.toggle('light');
+}
+
+</script>
+
+</body>
+</html>
+```
