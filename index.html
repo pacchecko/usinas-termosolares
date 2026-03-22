@@ -1,0 +1,347 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usinas Termossolares - NASA+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#020617;
+    color:#e2e8f0;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    padding:15px;
+    background:rgba(0,0,0,0.8);
+    display:flex;
+    justify-content:space-between;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+}
+
+/* HEADER */
+header{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+header h1{
+    font-size:3em;
+}
+
+/* SEÇÕES */
+section{
+    padding:80px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+/* DASHBOARD */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.metric{
+    background:#0f172a;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.metric h3{
+    font-size:2em;
+    color:#22c55e;
+}
+
+/* TURBINA */
+.turbina{
+    width:120px;
+    height:120px;
+    border:6px solid #facc15;
+    border-radius:50%;
+    margin:auto;
+    animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+
+/* FORMULA */
+.formula{
+    background:#000;
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+    font-family:monospace;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div>Termossolar NASA+</div>
+<div>
+<a href="#historia">História</a>
+<a href="#fisica">Física</a>
+<a href="#dados">Dados</a>
+<a href="#brasil">Brasil</a>
+</div>
+</nav>
+
+<header>
+<h1>Usinas Termossolares</h1>
+<p>Estudo Científico Completo + Simulações</p>
+</header>
+
+<section id="historia">
+
+<div class="card">
+<h2>História Completa da Energia Termossolar</h2>
+
+<p>
+A energia solar térmica surgiu no século XIX com Augustin Mouchot (1866), que demonstrou a possibilidade de gerar vapor utilizando radiação solar.
+</p>
+
+<p>
+Durante o século XX, a tecnologia evoluiu lentamente até a crise do petróleo (1970), quando houve grande interesse em energias renováveis.
+</p>
+
+<p>
+Nos anos 1980, surgiram as primeiras usinas comerciais nos EUA (SEGS), utilizando calhas parabólicas.
+</p>
+
+<p>
+No século XXI, países como Espanha, China e EUA desenvolveram grandes projetos com armazenamento térmico.
+</p>
+
+<p>
+Hoje, a energia termossolar é considerada estratégica para garantir estabilidade energética global.
+</p>
+
+</div>
+
+</section>
+
+<section id="fisica">
+
+<div class="card">
+<h2>Fundamentos Físicos Profundos</h2>
+
+<p><b>1. Radiação Solar:</b> Energia emitida pelo Sol (~1361 W/m² na atmosfera).</p>
+
+<p><b>2. Lei da Conservação de Energia:</b> Energia não é criada, apenas transformada.</p>
+
+<p><b>3. Termodinâmica:</b> Conversão de calor em trabalho.</p>
+
+<p><b>4. Ciclo de Rankine:</b> Base das usinas térmicas.</p>
+
+<div class="formula">
+η = W / Q
+</div>
+
+<p>Onde η é eficiência, W trabalho e Q calor fornecido.</p>
+
+<div class="formula">
+Q = mcΔT
+</div>
+
+<p>Equação do calor (massa, calor específico e variação de temperatura).</p>
+
+</div>
+
+<div class="card">
+<h2>Simulação de Turbina</h2>
+<div class="turbina"></div>
+<p>Representação da conversão térmica → mecânica → elétrica</p>
+</div>
+
+</section>
+
+<section id="dados">
+
+<div class="card">
+<h2>Dashboard Energético Global</h2>
+
+<div class="grid">
+
+<div class="metric">
+<h3 id="energia">0</h3>
+<p>kWh gerados (simulação)</p>
+</div>
+
+<div class="metric">
+<h3>40%</h3>
+<p>Eficiência média</p>
+</div>
+
+<div class="metric">
+<h3>1000°C</h3>
+<p>Temperatura máxima</p>
+</div>
+
+<div class="metric">
+<h3>15h</h3>
+<p>Armazenamento térmico</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+<h2>Comparação de Eficiência</h2>
+<canvas id="grafico"></canvas>
+</div>
+
+</section>
+
+<section id="brasil">
+
+<div class="card">
+<h2>Brasil e Potencial Energético</h2>
+
+<p>
+O Brasil possui um dos maiores potenciais solares do mundo, especialmente no Nordeste.
+</p>
+
+<p>
+Regiões como Bahia, Ceará e Piauí apresentam níveis elevados de radiação solar anual.
+</p>
+
+<p>
+Apesar disso, a tecnologia termossolar ainda é pouco explorada no país.
+</p>
+
+<p>
+O investimento é focado na energia fotovoltaica, mas a termossolar pode complementar com armazenamento.
+</p>
+
+</div>
+
+<div class="card">
+<h2>Impactos Ambientais</h2>
+
+<ul>
+<li>Redução de CO₂</li>
+<li>Energia renovável</li>
+<li>Uso de grandes áreas</li>
+<li>Baixo impacto climático</li>
+</ul>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+<h2>Futuro da Energia Termossolar</h2>
+
+<p>
+A tendência global é aumentar o uso de energia renovável.
+</p>
+
+<p>
+A tecnologia termossolar pode ser essencial por permitir armazenamento de energia.
+</p>
+
+<p>
+Avanços incluem:
+</p>
+
+<ul>
+<li>Melhores materiais térmicos</li>
+<li>Maior eficiência</li>
+<li>Redução de custos</li>
+<li>Integração com inteligência artificial</li>
+</ul>
+
+</div>
+
+<div class="card">
+<h2>Conclusão Científica</h2>
+
+<p>
+As usinas termossolares representam uma aplicação direta da física moderna na geração de energia sustentável.
+</p>
+
+<p>
+Elas utilizam princípios fundamentais da termodinâmica, transferência de calor e engenharia para produzir eletricidade limpa.
+</p>
+
+<p>
+Seu potencial para o futuro energético mundial é extremamente elevado.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+<p>Gabriel Pacheco • Isabely Mota • Maria E. Damasceno • Juan Santos</p>
+<p>Projeto Científico - Nível NASA+</p>
+</footer>
+
+<script>
+
+/* CONTADOR */
+let energia=0;
+setInterval(()=>{
+energia+=10;
+document.getElementById('energia').innerText=energia;
+},1000);
+
+/* GRÁFICO */
+new Chart(document.getElementById('grafico'),{
+type:'bar',
+data:{
+labels:['Termossolar','Fotovoltaica','Termelétrica','Hidrelétrica'],
+datasets:[{
+label:'Eficiência (%)',
+data:[40,25,60,90]
+}]
+}
+});
+
+</script>
+
+</body>
+</html>
+```
